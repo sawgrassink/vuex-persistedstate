@@ -7,3 +7,9 @@
 # when working with contributors
 /package-lock.json
 /yarn.lock
+.idea/codeStyles/codeStyleConfig.xml
+.idea/codeStyles/Project.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/vuex-persistedstate.iml

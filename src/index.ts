@@ -1,6 +1,7 @@
 import { Store, MutationPayload } from "vuex";
 import merge from "deepmerge";
 import * as shvl from "shvl";
+import _ from "lodash";
 
 interface Storage {
   getItem: (key: string) => any;
@@ -51,7 +52,9 @@ export default function <State>(
   }
 
   function setState(key, state, storage) {
-    return storage.setItem(key, JSON.stringify(state));
+    return _.debounce(() => {
+      storage.setItem(key, JSON.stringify(state));
+    }, 1000);
   }
 
   function reducer(state, paths) {
